@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+
+<div class="">
+    <label>username</label>
+        <input type="text" id="pass">
+    </div>
+    <div class="">
+        <label>passwoard</label>
+            <input type="password" id="pass1">
+        </div>
+        <input type="button" value="submit" onclick="login()">
+    
+</div>
+
+
+
+<div class="">
+    <label>username</label>
+        <input type="text" id="pass2">
+    </div>
+    <div class="">
+        <label>passwoard</label>
+            <input type="password" id="pass3">
+        </div>
+        <input type="button" value="submit" onclick="signup()">
+    
+</div>
+
+
+
+
+
+    <script>
+
+function login()
+{
+    var loo=document.getElementById("pass").value
+    var loo1=document.getElementById("pass1").value
+
+    localStorage.setItem("username",loo)
+    localStorage.setItem("passwoard",loo1)
+
+document.getElementById("pass").value=""
+document.getElementById("pass1").value=""
+
+}
+
+
+
+function signup()
+{
+    var loo2=document.getElementById("pass2").value
+    var loo3=document.getElementById("pass3").value
+
+var sumit=localStorage.getItem("username" ,loo2)
+var sumit1=localStorage.getItem("passwoard" ,loo3)
+
+    if((loo2 == sumit) && (loo3 == sumit1)){
+        alert("login has successfull")
+        window.location.href="index1.html"
+    }
+    else(
+        alert("login faild")
+    )
+
+    document.getElementById("pass2").value=""
+document.getElementById("pass3").value=""
+
+}
+    </script>
+    
+</body>
+</html>
